@@ -1,0 +1,22 @@
+$main-color: #FE3E6D;
+$main-white: #ffffff;
+$main-black: #3B3B3B;
+$main-gray: #6B7076;
+$main-blue: #1A93DA;
+$secondary-blue: #EAF7FF;
+$secondary-gray: #C7CBCF;
+$alternative-gray: #DEE4E9;
+$alternative-gray-light: #F0F4F8;
+
+$main-font-family: 'Avenir';
+
+$main-font-size: 16px;
+$main-font-size-small: 14px;
+$main-font-size-big: 22px;
+
+$main-font-rem: calc($main-font-size / $main-font-size);
+$main-font-rem-small: calc($main-font-size-small / $main-font-size);
+$main-font-rem-big: calc($main-font-size-big / $main-font-size);
+
+$main-font-weight: 400;
+$main-font-weight-bold: 800;
