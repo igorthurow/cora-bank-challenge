@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import './menu-item.scss'
 
@@ -17,3 +18,9 @@ export const MenuItem = ({ children, route, active }) => (
 		</Link>
 	</li>
 )
+
+MenuItem.propTypes = {
+	children: PropTypes.node.isRequired,
+	route: PropTypes.string.isRequired,
+	active: PropTypes.bool
+}
