@@ -28,15 +28,7 @@ const IndexPage = () => {
 					{
 						label: 'Igor',
 						route: '/'
-					},
-					{
-						label: 'Igor',
-						route: '/'
-					},
-					{
-						label: 'Igor',
-						route: '/'
-					},
+					}
 				]}
 			/>
 		</div>
