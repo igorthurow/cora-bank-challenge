@@ -1,15 +1,15 @@
 @use '../../global.scss'as *;
 
-.menu-item {
+.filter-item {
   width: 100%;
   height: 100%;
   list-style: none;
 
-  &__link {
-    box-sizing: border-box;
-    font-size: $main-font-rem + rem;
-    font-family: $main-font-family;
+  &__button {
     cursor: pointer;
+    box-sizing: border-box;
+    font-size: $main-font-rem;
+    font-family: $main-font-family;
     border-radius: 32px;
     display: flex;
     align-items: center;
@@ -21,6 +21,7 @@
     background-color: $main-white;
     color: $main-color;
     text-decoration: none;
+    border: none;
 
     &:hover,
     &:focus {

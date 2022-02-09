@@ -1,1 +1,1 @@
-export { Menu } from './menu'
+export { Filter } from './filter'
