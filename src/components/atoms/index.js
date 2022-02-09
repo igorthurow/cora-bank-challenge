@@ -1,1 +1,2 @@
-export { MenuItem } from './menu-item'
+export { FilterItem } from './filter-item'
+export { Header } from './header'
