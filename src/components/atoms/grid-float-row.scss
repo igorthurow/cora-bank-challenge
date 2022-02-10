@@ -1,8 +1,41 @@
+@use '../../global.scss'as *;
+
 .grid-float-row {
   display: contents;
+  font-size: $main-font-rem-extra-small;
+  color: $main-black;
 
   &__date {
-    grid-column-start: 1;
-    grid-column-end: 5;
+    font-weight: $main-font-weight-bold;
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+    &::after,
+    &::before {
+      content: '';
+      position: absolute;
+      width: 1px;
+      height: 12px;
+      background-color: $secondary-gray;
+    }
+
+    &::before {
+      top: -#{$main-padding};
+    }
+
+    &::after {
+      bottom: -#{$main-padding};
+    }
+  }
+
+  &__value {
+    grid-column-start: 2;
+    grid-column-end: 6;
+    text-align: right;
+  }
+
+  &__amount {
+    font-weight: $main-font-weight-bold;
   }
 }

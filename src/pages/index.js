@@ -20,6 +20,14 @@ import {
 
 import { ReceivedIcon, PendingIcon, RefundedIcon } from '../icons'
 
+const DEFAULT_DATE_FORMAT = 'DD [de] MMMM'
+const DEFAULT_MINIMUM_FRACTION_DIGITS = 2
+const DEFAULT_LOCALE = 'pt-BR'
+
+const buildRealCurrency = (value) => new Intl.NumberFormat(DEFAULT_LOCALE, {
+	minimumFractionDigits: DEFAULT_MINIMUM_FRACTION_DIGITS
+}).format(value)
+
 const config = {
 	completed: {
 		debit: {
@@ -77,14 +85,11 @@ const buildRowProps = ({
 		text.toLowerCase()
 	)
 	const dateFormat = 'DD MMM YYYY - HH:mm'
-	const locale = 'pt-BR'
 
 	const { icon, texts, theme } = config[statusLwc][entryLwc]
 	const { prefix, [sourceLwc]: text } = texts
 	const formattedDate = moment(dateEvent).format(dateFormat)
-	const value = new Intl.NumberFormat(locale, {
-		minimumFractionDigits: 2
-	}).format(amount)
+	const value = buildRealCurrency(amount)
 
 	return {
 		...props,
@@ -100,10 +105,22 @@ const buildRowProps = ({
 }
 
 const buildGridHead = (date) => {
-	const dateFormat = 'DD [de] MMMM'
-	const formattedDate = moment(date).format(dateFormat)
+	const formattedDate = moment(date).format(DEFAULT_DATE_FORMAT)
 
 	return [formattedDate, 'Tipo de transação', 'Data', 'Valor']
+}
+
+const buildFloatRowProps = ({ date, amountTotal }) => {
+	const formattedDate = moment(date).format(DEFAULT_DATE_FORMAT)
+	const formattedValue = buildRealCurrency(amountTotal)
+
+	return {
+		date: formattedDate,
+		amount: {
+			prefix: 'Saldo do dia',
+			value: `R$ ${formattedValue}`
+		}
+	}
 }
 
 const data = {
@@ -287,14 +304,13 @@ const data = {
 const buildGridItems = (data) => {
 	const { results } = data
 	const { gridItems, gridHead } = results.reduce(
-		(prev, { items, date, amountTotal }) => {
+		(prev, { items, date, amountTotal }, index) => {
 			const gridItems = [
 				...(prev.gridItems || []),
 				{
-					float: {
-						date,
-						amountTotal
-					},
+					...(index && {
+						float: buildFloatRowProps({ amountTotal, date })
+					}),
 					body: items.map(buildRowProps)
 				}
 			]
