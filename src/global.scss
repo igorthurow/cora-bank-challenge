@@ -34,6 +34,9 @@ $boxed-width: 1035px;
 
 $small-screen-padding: 20px;
 
+$main-border-radius: 16px;
+$main-border-radius-big: calc($main-border-radius * 2);
+
 @mixin boxed-small-screen {
   max-width: calc($boxed-width + $small-screen-padding);
   padding-left: $small-screen-padding;

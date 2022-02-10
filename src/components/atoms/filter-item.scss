@@ -10,7 +10,7 @@
     box-sizing: border-box;
     font-size: $main-font-rem;
     font-family: $main-font-family;
-    border-radius: 32px;
+    border-radius: $main-border-radius-big;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -20,12 +20,9 @@
     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
     background-color: $main-white;
     color: $main-color;
-    text-decoration: none;
-    border: none;
 
     &:hover,
     &:focus {
-      outline: none;
       background-color: $secondary-blue;
       color: $main-color;
     }
