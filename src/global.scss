@@ -1,11 +1,10 @@
 @font-face {
   font-family: 'Avenir';
-  src: url('//db.onlinewebfonts.com/t/be9a43357e0fe07642191e4b32995385.eot');
-  src: url('//db.onlinewebfonts.com/t/be9a43357e0fe07642191e4b32995385.eot?#iefix') format('embedded-opentype'),
-    url('//db.onlinewebfonts.com/t/be9a43357e0fe07642191e4b32995385.woff2') format('woff2'),
-    url('//db.onlinewebfonts.com/t/be9a43357e0fe07642191e4b32995385.woff') format('woff'),
-    url('//db.onlinewebfonts.com/t/be9a43357e0fe07642191e4b32995385.ttf') format('truetype'),
-    url('//db.onlinewebfonts.com/t/be9a43357e0fe07642191e4b32995385.svg#AvenirNextLTW02-Regular') format('svg');
+  src: url('/fonts/be9a43357e0fe07642191e4b32995385.eot') format('eot');
+  src: url('/fonts/be9a43357e0fe07642191e4b32995385.woff2') format('woff2'),
+    url('/fonts/be9a43357e0fe07642191e4b32995385.woff') format('woff'),
+    url('/fonts/be9a43357e0fe07642191e4b32995385.ttf') format('truetype'),
+    url('/fonts/be9a43357e0fe07642191e4b32995385.svg') format('svg');
 }
 
 $main-color: #fe3e6d;
