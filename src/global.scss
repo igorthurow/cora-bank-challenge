@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'Avenir';
-  src: url('/fonts/be9a43357e0fe07642191e4b32995385.eot') format('eot');
-  src: url('/fonts/be9a43357e0fe07642191e4b32995385.woff2') format('woff2'),
-    url('/fonts/be9a43357e0fe07642191e4b32995385.woff') format('woff'),
-    url('/fonts/be9a43357e0fe07642191e4b32995385.ttf') format('truetype'),
-    url('/fonts/be9a43357e0fe07642191e4b32995385.svg') format('svg');
+  src: url('/be9a43357e0fe07642191e4b32995385.eot') format('eot');
+  src: url('/be9a43357e0fe07642191e4b32995385.woff2') format('woff2'),
+    url('/be9a43357e0fe07642191e4b32995385.woff') format('woff'),
+    url('/be9a43357e0fe07642191e4b32995385.ttf') format('truetype'),
+    url('/be9a43357e0fe07642191e4b32995385.svg') format('svg');
 }
 
 $main-color: #fe3e6d;
@@ -32,12 +32,7 @@ $main-font-weight-bold: 800;
 
 $boxed-width: 1035px;
 
-$small-screen-padding: 20px;
+$main-padding: 16px;
 
 $main-border-radius: 16px;
 $main-border-radius-big: calc($main-border-radius * 2);
-
-@mixin boxed-small-screen {
-  max-width: calc($boxed-width + $small-screen-padding);
-  padding-left: $small-screen-padding;
-}
