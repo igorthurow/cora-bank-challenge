@@ -1,0 +1,32 @@
+@use '../../global.scss'as *;
+
+.grid-row {
+  $parent: &;
+  display: contents;
+
+  &__text,
+  &__date {
+    color: $main-gray;
+  }
+
+  &__amount {
+    &--credit {
+      color: $main-blue;
+    }
+
+    &--debit {
+      color: $main-color;
+    }
+
+    &--credit,
+    &--debit {
+      #{$parent}__amount-value {
+        font-weight: $main-font-weight-bold;
+      }
+    }
+
+    &--refunded {
+      text-decoration: line-through;
+    }
+  }
+}

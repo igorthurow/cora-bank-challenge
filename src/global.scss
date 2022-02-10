@@ -19,13 +19,19 @@ $alternative-gray-light: #f0f4f8;
 
 $main-font-family: 'Avenir';
 
-$main-font-size: 16px;
+$main-font-size-extra-small: 12px;
 $main-font-size-small: 14px;
+$main-font-size: 16px;
 $main-font-size-big: 22px;
 
-$main-font-rem: calc($main-font-size / $main-font-size)+rem;
-$main-font-rem-small: calc($main-font-size-small / $main-font-size)+rem;
-$main-font-rem-big: calc($main-font-size-big / $main-font-size)+rem;
+@function pxToRem($px) {
+  @return $px / $main-font-size+rem;
+}
+
+$main-font-rem: pxToRem($main-font-size);
+$main-font-rem-extra-small: pxToRem($main-font-size-extra-small);
+$main-font-rem-small: pxToRem($main-font-size-small);
+$main-font-rem-big: pxToRem($main-font-size-big);
 
 $main-font-weight: 400;
 $main-font-weight-bold: 800;

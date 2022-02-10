@@ -5,10 +5,10 @@ import './filter.scss'
 
 import { FilterItem } from '../atoms'
 
-export const Filter = ({ filterItems }) => (
+export const Filter = ({ filterItems, onClick }) => (
 	<ul className='filter__items'>
-		{filterItems.map(({ route, label }) => (
-			<FilterItem key={route} route={route}>
+		{filterItems.map(({ label }) => (
+			<FilterItem key={label} onClick={onClick}>
 				{label}
 			</FilterItem>
 		))}
