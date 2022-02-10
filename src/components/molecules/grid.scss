@@ -42,15 +42,6 @@
     display: contents;
   }
 
-  &__float-row {
-    display: contents;
-  }
-
-  &__float-column {
-    grid-column-start: 1;
-    grid-column-end: 5;
-  }
-
   &__body {
     display: contents;
     font-size: $main-font-rem;

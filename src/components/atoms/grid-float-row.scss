@@ -1,0 +1,8 @@
+.grid-float-row {
+  display: contents;
+
+  &__date {
+    grid-column-start: 1;
+    grid-column-end: 5;
+  }
+}
