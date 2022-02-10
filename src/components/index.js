@@ -1,2 +1,2 @@
-export { FilterItem, Header } from './atoms'
+export { FilterItem, Header, Search } from './atoms'
 export { Filter } from './molecules'
