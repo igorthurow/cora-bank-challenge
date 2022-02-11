@@ -19,7 +19,7 @@ export const Grid = ({
 			<thead className='grid__header'>
 				<tr className='grid__header-row'>
 					{gridHead.map((columnTitle) => (
-						<th className='grid__header-column'>{columnTitle}</th>
+						<th key={columnTitle} className='grid__header-column'>{columnTitle}</th>
 					))}
 				</tr>
 			</thead>
