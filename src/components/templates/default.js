@@ -49,3 +49,27 @@ export const Default = ({
 		</div>
 	)
 }
+
+Default.propTypes = {
+	header: PropTypes.shape({
+		pageTitle: PropTypes.string.isRequired
+	}).isRequired,
+	grid: PropTypes.shape({
+		GridFloatRow: PropTypes.node.isRequired,
+		GridRow: PropTypes.node.isRequired,
+		gridItems: PropTypes.array.isRequired,
+		gridHead: PropTypes.array.isRequired,
+		loading: PropTypes.bool.isRequired
+	}).isRequired,
+	search: PropTypes.shape({
+		onChange: PropTypes.func.isRequired,
+		value: PropTypes.string.isRequired
+	}).isRequired,
+	filter: PropTypes.shape({
+		active: PropTypes.string.isRequired,
+		onClick: PropTypes.func.isRequired,
+		filterItems: PropTypes.array.isRequired
+	}).isRequired,
+	className: PropTypes.string
+}
+
