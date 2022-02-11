@@ -1,0 +1,36 @@
+@use '../../global.scss'as *;
+
+.default-template {
+  &__header {
+    margin-bottom: $main-margin-between-elements;
+  }
+
+  &__grid {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__grid-boxed {
+    width: 100%;
+    max-width: $boxed-width;
+  }
+
+  &__grid-filters {
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: $main-margin-between-elements;
+
+    >*:first-child {
+      flex: 1;
+      padding-right: 42px;
+    }
+
+    >*:last-child {
+      flex: 2;
+      max-width: 609px;
+    }
+  }
+}

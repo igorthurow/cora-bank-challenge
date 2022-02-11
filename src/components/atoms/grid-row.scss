@@ -10,6 +10,8 @@
   }
 
   &__amount {
+    text-align: right;
+
     &--credit {
       color: $main-blue;
     }

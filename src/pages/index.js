@@ -8,15 +8,7 @@ import 'reset-css'
 
 import { Helmet } from 'react-helmet'
 
-import {
-	FilterItem,
-	Filter,
-	Header,
-	Search,
-	GridRow,
-	GridFloatRow,
-	Grid
-} from '../components'
+import { GridRow, GridFloatRow, Default } from '../components'
 
 import { ReceivedIcon, PendingIcon, RefundedIcon } from '../icons'
 
@@ -24,9 +16,10 @@ const DEFAULT_DATE_FORMAT = 'DD [de] MMMM'
 const DEFAULT_MINIMUM_FRACTION_DIGITS = 2
 const DEFAULT_LOCALE = 'pt-BR'
 
-const buildRealCurrency = (value) => new Intl.NumberFormat(DEFAULT_LOCALE, {
-	minimumFractionDigits: DEFAULT_MINIMUM_FRACTION_DIGITS
-}).format(value)
+const buildRealCurrency = (value) =>
+	new Intl.NumberFormat(DEFAULT_LOCALE, {
+		minimumFractionDigits: DEFAULT_MINIMUM_FRACTION_DIGITS
+	}).format(value)
 
 const config = {
 	completed: {
@@ -333,11 +326,22 @@ const IndexPage = () => {
 	const { gridItems, gridHead } = buildGridItems(data)
 
 	return (
-		<Grid
-			GridFloatRow={GridFloatRow}
-			GridRow={GridRow}
-			gridItems={gridItems}
-			gridHead={gridHead}
+		<Default
+			header={{
+				pageTitle: 'Extrato'
+			}}
+			filter={{
+				filterItems: ['Tudo', 'Entrada', 'Saída', 'Futuro']
+			}}
+			search={{
+				value: 'hello world'
+			}}
+			grid={{
+				GridFloatRow,
+				GridRow,
+				gridHead,
+				gridItems
+			}}
 		/>
 	)
 }
