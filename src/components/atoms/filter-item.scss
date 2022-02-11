@@ -6,12 +6,12 @@
   list-style: none;
 
   &__button {
+    outline-color: $main-color;
     border: none;
     cursor: pointer;
     box-sizing: border-box;
     font-size: $main-font-rem;
     font-family: $main-font-family;
-    border-radius: $main-border-radius-big;
     display: flex;
     align-items: center;
     justify-content: center;

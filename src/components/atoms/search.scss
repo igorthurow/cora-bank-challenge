@@ -5,14 +5,13 @@
   position: relative;
   display: flex;
   align-items: center;
-  flex: 1;
 
   &__input {
-    flex: 1;
+    outline-color: $main-color;
+    flex-grow: 1;
     border: none;
     background-color: $alternative-gray-light;
     color: $main-color;
-    border-radius: $main-border-radius;
     font-size: $main-font-rem;
     height: 100%;
     padding-left: 56px;
