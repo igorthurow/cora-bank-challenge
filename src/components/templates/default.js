@@ -1,18 +1,29 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Helmet } from 'react-helmet'
 
 import './default.scss'
 
 import { Header, Filter, Search, Grid } from '../../components'
+import classNames from 'classnames'
 
 export const Default = ({
 	header: { pageTitle },
 	grid: { GridFloatRow, GridRow, gridItems, gridHead, loading },
 	search: { onChange, value },
-	filter: { active, onClick, filterItems }
+	filter: { active, onClick, filterItems },
+	className
 }) => {
 	return (
-		<div className='default-template'>
+		<div className={classNames('default-template', className)}>
+			<Helmet
+				htmlAttributes={{
+					lang: 'pt-br'
+				}}
+			>
+				<title>Cora Bank Challenge :)</title>
+				<meta name='description' content='Hey hacker ;)'></meta>
+			</Helmet>
 			<div className='default-template__header'>
 				<Header>{pageTitle}</Header>
 			</div>

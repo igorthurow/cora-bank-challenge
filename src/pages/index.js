@@ -3,8 +3,6 @@ import React from 'react'
 import './index.scss'
 import 'reset-css'
 
-import { Helmet } from 'react-helmet'
-
 import { GridRow, GridFloatRow, Default } from '../components'
 import { buildGridItems } from '../utils'
 import { useFilter, useSearch, useApi } from '../hooks'
@@ -16,37 +14,28 @@ const IndexPage = () => {
 	const { gridItems, gridHead } = buildGridItems(searchedData)
 
 	return (
-		<div className='statements'>
-			<Helmet
-				htmlAttributes={{
-					lang: 'pt-br'
-				}}
-			>
-				<title>Cora Bank Challenge :)</title>
-				<meta name='description' content='Hey hacker ;)'></meta>
-			</Helmet>
-			<Default
-				header={{
-					pageTitle: 'Extrato'
-				}}
-				filter={{
-					active,
-					onClick: setActiveFilter,
-					filterItems
-				}}
-				search={{
-					onChange: setSearchTems,
-					value: searchTem
-				}}
-				grid={{
-					loading,
-					GridFloatRow,
-					GridRow,
-					gridHead,
-					gridItems
-				}}
-			/>
-		</div>
+		<Default
+			className='statements'
+			header={{
+				pageTitle: 'Extrato'
+			}}
+			filter={{
+				active,
+				onClick: setActiveFilter,
+				filterItems
+			}}
+			search={{
+				onChange: setSearchTems,
+				value: searchTem
+			}}
+			grid={{
+				loading,
+				GridFloatRow,
+				GridRow,
+				gridHead,
+				gridItems
+			}}
+		/>
 	)
 }
 
