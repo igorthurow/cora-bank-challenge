@@ -7,7 +7,7 @@ import { Header, Filter, Search, Grid } from '../../components'
 
 export const Default = ({
 	header: { pageTitle },
-	grid: { GridFloatRow, GridRow, gridItems, gridHead },
+	grid: { GridFloatRow, GridRow, gridItems, gridHead, loading },
 	search: { onChange, value },
 	filter: { active, onClick, filterItems }
 }) => {
@@ -19,7 +19,11 @@ export const Default = ({
 			<div className='default-template__grid'>
 				<div className='default-template__grid-boxed'>
 					<div className='default-template__grid-filters'>
-						<Filter active={active} onClick={onClick} filterItems={filterItems} />
+						<Filter
+							active={active}
+							onClick={onClick}
+							filterItems={filterItems}
+						/>
 						<Search value={value} onChange={onChange} />
 					</div>
 					<Grid
@@ -27,6 +31,7 @@ export const Default = ({
 						GridRow={GridRow}
 						gridItems={gridItems}
 						gridHead={gridHead}
+						loading={loading}
 					/>
 				</div>
 			</div>

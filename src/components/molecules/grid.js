@@ -3,7 +3,17 @@ import PropTypes from 'prop-types'
 
 import './grid.scss'
 
-export const Grid = ({ gridItems, gridHead, GridFloatRow, GridRow }) => {
+export const Grid = ({
+	gridItems,
+	gridHead,
+	GridFloatRow,
+	GridRow,
+	loading
+}) => {
+	if (loading) return <p>Carregando...</p>
+	if (!gridItems || !gridItems.length)
+		return <p>Não encontramos nenhum resultado...</p>
+
 	return (
 		<table className='grid'>
 			<thead className='grid__header'>
@@ -23,12 +33,7 @@ export const Grid = ({ gridItems, gridHead, GridFloatRow, GridRow }) => {
 					{body ? (
 						<tbody className='grid__body'>
 							{body.map((props, index) => {
-								return (
-									<GridRow
-										{...props}
-										key={index}
-									/>
-								)
+								return <GridRow {...props} key={index} />
 							})}
 						</tbody>
 					) : null}
