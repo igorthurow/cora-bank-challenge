@@ -25,18 +25,18 @@ export const Grid = ({
 			</thead>
 			{gridItems.map(({ float, body }, index) => (
 				<>
-					{float ? (
+					{float && (
 						<tbody className='grid__float-body'>
 							<GridFloatRow {...float} key={index} />
 						</tbody>
-					) : null}
-					{body ? (
+					)}
+					{body && (
 						<tbody className='grid__body'>
 							{body.map((props, index) => {
 								return <GridRow {...props} key={index} />
 							})}
 						</tbody>
-					) : null}
+					)}
 				</>
 			))}
 		</table>
