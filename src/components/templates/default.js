@@ -16,7 +16,7 @@ export const Default = ({
 			<div className='default-template__header'>
 				<Header>{pageTitle}</Header>
 			</div>
-			<div className='default-template__grid'>
+			<main className='default-template__grid'>
 				<div className='default-template__grid-boxed'>
 					<div className='default-template__grid-filters'>
 						<Filter
@@ -34,7 +34,7 @@ export const Default = ({
 						loading={loading}
 					/>
 				</div>
-			</div>
+			</main>
 		</div>
 	)
 }

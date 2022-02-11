@@ -17,7 +17,14 @@ const IndexPage = () => {
 
 	return (
 		<div className='statements'>
-			<Helmet />
+			<Helmet
+				htmlAttributes={{
+					lang: 'pt-br'
+				}}
+			>
+				<title>Cora Bank Challenge :)</title>
+				<meta name='description' content='Hey hacker ;)'></meta>
+			</Helmet>
 			<Default
 				header={{
 					pageTitle: 'Extrato'
