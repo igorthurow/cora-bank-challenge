@@ -19,6 +19,6 @@ export const FilterItem = ({ children, onClick, active }) => (
 
 FilterItem.propTypes = {
 	children: PropTypes.node.isRequired,
-	route: PropTypes.string.isRequired,
+	onClick: PropTypes.func.isRequired,
 	active: PropTypes.bool
 }
