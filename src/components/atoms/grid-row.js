@@ -13,20 +13,20 @@ export const GridRow = ({
 	formattedDate
 }) => (
 	<tr className='grid-row'>
-		<th>
+		<td>
 			<img alt="" src={icon} />
-		</th>
-		<th>{actor}</th>
-		<th className='grid-row__text'>{text}</th>
-		<th className='grid-row__date'>{formattedDate}</th>
-		<th
+		</td>
+		<td>{actor}</td>
+		<td className='grid-row__text'>{text}</td>
+		<td className='grid-row__date'>{formattedDate}</td>
+		<td
 			className={classNames('grid-row__amount', {
 				[`grid-row__amount--${theme}`]: theme
 			})}
 		>
 			{prefix && <span>{prefix} </span>}
 			<span className='grid-row__amount-value'>{value}</span>
-		</th>
+		</td>
 	</tr>
 )
 
