@@ -55,10 +55,10 @@ Default.propTypes = {
 		pageTitle: PropTypes.string.isRequired
 	}).isRequired,
 	grid: PropTypes.shape({
-		GridFloatRow: PropTypes.node.isRequired,
-		GridRow: PropTypes.node.isRequired,
-		gridItems: PropTypes.array.isRequired,
-		gridHead: PropTypes.array.isRequired,
+		GridFloatRow: PropTypes.elementType.isRequired,
+		GridRow: PropTypes.elementType.isRequired,
+		gridItems: PropTypes.array,
+		gridHead: PropTypes.array,
 		loading: PropTypes.bool.isRequired
 	}).isRequired,
 	search: PropTypes.shape({

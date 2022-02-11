@@ -19,48 +19,41 @@ export const Grid = ({
 			<thead className='grid__header'>
 				<tr className='grid__header-row'>
 					{gridHead.map((columnTitle) => (
-						<th key={columnTitle} className='grid__header-column'>{columnTitle}</th>
+						<th key={columnTitle} className='grid__header-column'>
+							{columnTitle}
+						</th>
 					))}
 				</tr>
 			</thead>
 			{gridItems.map(({ float, body }, index) => (
-				<>
+				<React.Fragment key={`fragment-${index}`}>
 					{float && (
-						<tbody className='grid__float-body'>
-							<GridFloatRow {...float} key={index} />
+						<tbody className='grid__float-body' key={`float-${index}`}>
+							<GridFloatRow {...float} />
 						</tbody>
 					)}
 					{body && (
-						<tbody className='grid__body'>
+						<tbody className='grid__body' key={`body-${index}`}>
 							{body.map((props, index) => {
-								return <GridRow {...props} key={index} />
+								return <GridRow {...props} key={`body-row-${index}`} />
 							})}
 						</tbody>
 					)}
-				</>
+				</React.Fragment>
 			))}
 		</table>
 	)
 }
 
 Grid.propTypes = {
-	items: PropTypes.shape({
-		itemsTotal: PropTypes.number.isRequired,
-		results: PropTypes.arrayOf(
-			PropTypes.shape({
-				date: PropTypes.string.isRequired,
-				amountTotal: PropTypes.number.isRequired,
-				items: PropTypes.arrayOf(
-					PropTypes.shape({
-						status: PropTypes.string.isRequired,
-						actor: PropTypes.string.isRequired,
-						amount: PropTypes.number.isRequired,
-						entry: PropTypes.string.isRequired,
-						source: PropTypes.string.isRequired,
-						dateEvent: PropTypes.string.isRequired
-					})
-				).isRequired
-			})
-		).isRequired
-	}).isRequired
+	gridItems: PropTypes.arrayOf(
+		PropTypes.shape({
+			float: PropTypes.object,
+			body: PropTypes.array
+		})
+	),
+	gridHead: PropTypes.arrayOf(PropTypes.string),
+	GridFloatRow: PropTypes.elementType.isRequired,
+	GridRow: PropTypes.elementType.isRequired,
+	loading: PropTypes.bool
 }

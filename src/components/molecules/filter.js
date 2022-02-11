@@ -19,13 +19,13 @@ export const Filter = ({ filterItems, onClick, active }) => (
 	</ul>
 )
 
-//FIXME: PropTypes ta errado.
 Filter.propTypes = {
 	filterItems: PropTypes.arrayOf(
 		PropTypes.shape({
-			children: PropTypes.node.isRequired,
-			route: PropTypes.string.isRequired,
-			active: PropTypes.bool
+			label: PropTypes.string.isRequired,
+			value: PropTypes.string.isRequired
 		})
-	)
+	).isRequired,
+	onClick: PropTypes.func.isRequired,
+	active: PropTypes.string
 }

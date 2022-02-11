@@ -39,6 +39,5 @@ GridRow.propTypes = {
 	}).isRequired,
 	text: PropTypes.string.isRequired,
 	formattedDate: PropTypes.string.isRequired,
-	icon: PropTypes.string.isRequired,
-	prefix: PropTypes.string
+	icon: PropTypes.string.isRequired
 }

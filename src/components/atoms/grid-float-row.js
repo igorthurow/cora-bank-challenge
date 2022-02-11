@@ -14,6 +14,9 @@ export const GridFloatRow = ({ amount: { prefix, value }, date }) => (
 )
 
 GridFloatRow.propTypes = {
-	amountTotal: PropTypes.number.isRequired,
+	amount: PropTypes.shape({
+		prefix: PropTypes.string,
+		value: PropTypes.string
+	}).isRequired,
 	date: PropTypes.string.isRequired
 }
