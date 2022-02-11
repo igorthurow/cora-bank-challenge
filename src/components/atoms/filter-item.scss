@@ -21,8 +21,7 @@
     background-color: $main-white;
     color: $main-color;
 
-    &:hover,
-    &:focus {
+    &:hover {
       background-color: $secondary-blue;
       color: $main-color;
     }

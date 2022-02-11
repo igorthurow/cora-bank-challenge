@@ -7,13 +7,13 @@ import { FilterItem } from '../atoms'
 
 export const Filter = ({ filterItems, onClick, active }) => (
 	<ul className='filter__items'>
-		{filterItems.map((label) => (
+		{filterItems.map((item) => (
 			<FilterItem
-				key={label}
-				active={label === active}
-				onClick={() => onClick(label)}
+				key={item.label}
+				active={active === item.value}
+				onClick={() => onClick(item)}
 			>
-				{label}
+				{item.label}
 			</FilterItem>
 		))}
 	</ul>
