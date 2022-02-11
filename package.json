@@ -7,8 +7,8 @@
     "gatsby"
   ],
   "scripts": {
-    "develop": "gatsby develop",
-    "start": "gatsby develop",
+    "develop": "concurrently \"json-server --watch db.json\" \"gatsby develop\"",
+    "start": "npm run develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean"
@@ -18,14 +18,17 @@
     "gatsby-plugin-react-helmet": "^5.7.0",
     "gatsby-plugin-sass": "^5.7.0",
     "moment": "^2.29.1",
-    "prop-types": "^15.8.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
     "reset-css": "^5.0.1",
-    "sass": "^1.49.7"
+    "use-http": "^1.0.26"
   },
   "devDependencies": {
+    "sass": "^1.49.7",
+    "prop-types": "^15.8.1",
+    "json-server": "^0.17.0",
+    "concurrently": "^7.0.0",
     "classnames": "^2.3.1"
   }
 }
