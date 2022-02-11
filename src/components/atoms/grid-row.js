@@ -14,7 +14,7 @@ export const GridRow = ({
 }) => (
 	<tr className='grid-row'>
 		<th>
-			<img src={icon} />
+			<img alt="" src={icon} />
 		</th>
 		<th>{actor}</th>
 		<th className='grid-row__text'>{text}</th>

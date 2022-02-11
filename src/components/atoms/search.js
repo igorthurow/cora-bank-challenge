@@ -18,7 +18,7 @@ export const Search = ({ onChange, value }) => (
 			type='search'
 			placeholder='Pesquisar'
 		/>
-		<img className="search__icon" src={SearchIcon} />
+		<img alt="" className="search__icon" src={SearchIcon} />
 	</div>
 
 )
